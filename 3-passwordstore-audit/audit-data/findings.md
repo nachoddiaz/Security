@@ -1,4 +1,4 @@
-# [C-1] TITLE: Storging plain text on-chain is vivible to anyone, then not private
+# [H-1] TITLE: Storging plain text on-chain is vivible to anyone, then not private
 
 **Description:** All data stored on-chain is visible to anyoune, and can be read by anyone. The ``PasswordStore::s_password`` in intended to be private and only accessed throug the ``PasswordStore::getPassword`` function. It is to other contracts but not to anyone who can read the blockchain.
 
@@ -34,7 +34,7 @@ The best solution is to encrypt the password onchain and the store it inchain or
 
 <br><br><br><br><br>
 
-# [C-2]``PasswordStore::setPassword`` has not access control, a non-owner could change the password and set a new password
+# [H-2]``PasswordStore::setPassword`` has not access control, a non-owner could change the password and set a new password
 
 ## Description: 
 Everybody can call the ``PasswordStore::setPassword`` function and change the password. The function does not have any access control. The ``PasswordStore::setPassword`` function is intended to be called only by the owner of the contract.
