@@ -1,5 +1,5 @@
 ---
-title: Protocol Audit Report
+title: Password Store Audit Report
 author: Nacho Díaz
 date: December 13, 2023
 header-includes:
@@ -14,7 +14,7 @@ header-includes:
         
     \end{figure}
     \vspace*{2cm}
-    {\Huge\bfseries Protocol Audit Report\par}
+    {\Huge\bfseries Password Store Audit Report\par}
     \vspace{1cm}
     {\Large Version 1.0\par}
     \vspace{2cm}
