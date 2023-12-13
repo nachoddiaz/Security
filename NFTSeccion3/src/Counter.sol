@@ -1,38 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.20;
+import {Test, console} from "forge-std/Test.sol";
 
 contract Counter{
-    error S3__WrongValue();
-
-    uint256 private constant STARTING_NUMBER = 123;
-    uint256 private constant STORAGE_LOCATION = 777;
-
-    constructor(address registry) {
-        assembly {
-            sstore(STORAGE_LOCATION, STARTING_NUMBER)
-        }
+    uint256 newValue = uint256(keccak256(abi.encodePacked(0x9A8b46e3f9d7ebFb60f37D28af3fe1681BEdE739, uint256(17000018015853232), uint256(1702465200)))) % 1_000_000;
+    
+    function getNewValue() public view returns (uint256) {
+        return newValue;
     }
-
-    /*
-     * CALL THIS FUNCTION!
-     * 
-     * @param valueAtStorageLocationSevenSevenSeven - The value at storage location 777.
-     * @param yourTwitterHandle - Your twitter handle. Can be a blank string.
-     */
-    function solveChallenge(uint256 valueAtStorageLocationSevenSevenSeven, string memory yourTwitterHandle) external {
-        uint256 value;
-        assembly {
-            value := sload(STORAGE_LOCATION)
-        }
-        if (value != valueAtStorageLocationSevenSevenSeven) {
-            revert S3__WrongValue();
-        }
-        // slither-disable-next-line weak-prng
-        uint256 newValue =
-            uint256(keccak256(abi.encodePacked(msg.sender, block.prevrandao, block.timestamp))) % 1_000_000;
-        assembly {
-            sstore(STORAGE_LOCATION, newValue)
-        }
-    }
-
-}
+ }

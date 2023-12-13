@@ -80,6 +80,8 @@ if(msg.sender!=owner) return;
 
 # [I-1] The `PasswordStore::getPassword` natspect indicates there is a parameter `newPassword` that doesn-t exist therefore natspect is incorrect
 
+
+
 ## Description: 
 
 ```javascript
